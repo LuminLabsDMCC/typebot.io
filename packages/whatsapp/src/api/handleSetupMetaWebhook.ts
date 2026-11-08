@@ -122,7 +122,7 @@ const getAllWabaPhoneNumbers = async ({
   searchParams?: Record<string, string>;
 }) => {
   const url = new URL(
-    `${env.WHATSAPP_CLOUD_API_URL}/v17.0/${wabaId}/phone_numbers`,
+    `${env.WHATSAPP_CLOUD_API_URL}/${env.WHATSAPP_CLOUD_API_VERSION}/${wabaId}/phone_numbers`,
   );
   url.searchParams.set("fields", "id,display_phone_number");
   url.searchParams.set("limit", "100");
@@ -162,7 +162,7 @@ const isAppSubscribedToWaba = async ({
   searchParams?: Record<string, string>;
 }) => {
   const subscribedAppsUrl = new URL(
-    `${env.WHATSAPP_CLOUD_API_URL}/v17.0/${wabaId}/subscribed_apps`,
+    `${env.WHATSAPP_CLOUD_API_URL}/${env.WHATSAPP_CLOUD_API_VERSION}/${wabaId}/subscribed_apps`,
   );
   setSearchParams(subscribedAppsUrl, searchParams);
 
@@ -199,7 +199,7 @@ const subscribeAppToWaba = async ({
   searchParams?: Record<string, string>;
 }) => {
   const subscribedAppsUrl = new URL(
-    `${env.WHATSAPP_CLOUD_API_URL}/v17.0/${wabaId}/subscribed_apps`,
+    `${env.WHATSAPP_CLOUD_API_URL}/${env.WHATSAPP_CLOUD_API_VERSION}/${wabaId}/subscribed_apps`,
   );
   setSearchParams(subscribedAppsUrl, searchParams);
 

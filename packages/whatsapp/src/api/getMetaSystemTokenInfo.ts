@@ -19,7 +19,7 @@ export const getMetaSystemTokenInfo = ({
   appSecret?: string;
 }) => {
   const debugTokenUrl = new URL(
-    `${env.WHATSAPP_CLOUD_API_URL}/v17.0/debug_token`,
+    `${env.WHATSAPP_CLOUD_API_URL}/${env.WHATSAPP_CLOUD_API_VERSION}/debug_token`,
   );
   debugTokenUrl.searchParams.set("input_token", systemUserAccessToken);
   if (appSecret)

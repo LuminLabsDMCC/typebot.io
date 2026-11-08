@@ -396,6 +396,11 @@ const whatsAppEnv = {
       .url()
       .optional()
       .default("https://graph.facebook.com"),
+    WHATSAPP_CLOUD_API_VERSION: z
+      .string()
+      .regex(/^v\d+\.0$/)
+      .optional()
+      .default("v26.0"),
     WHATSAPP_INTERACTIVE_GROUP_SIZE: z.coerce.number().optional().default(3),
   },
 };
